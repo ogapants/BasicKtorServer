@@ -42,6 +42,9 @@ dependencies {
     compile "io.ktor:ktor-client-core-jvm:$ktor_version"
     compile "io.ktor:ktor-client-apache:$ktor_version"
     compile "org.jetbrains.exposed:exposed:0.13.3"
+    compile "mysql:mysql-connector-java:5.1.46"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+"
+    compile "io.ktor:ktor-gson:$ktor_version"
     testCompile "io.ktor:ktor-server-tests:$ktor_version"
 }
 
