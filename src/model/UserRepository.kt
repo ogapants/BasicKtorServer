@@ -27,7 +27,7 @@ class UserRepository {
 
     init {
         connection = Database.connect(
-            "jdbc:mysql://localhost:3306/sample", driver = "com.mysql.jdbc.Driver",
+            "jdbc:mysql://172.28.0.2:3306/sample", driver = "com.mysql.jdbc.Driver",
             user = user, password = password
         )
     }

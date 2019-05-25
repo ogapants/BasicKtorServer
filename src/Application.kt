@@ -1,11 +1,11 @@
 package com.sample
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
 import com.sample.model.User
 import com.sample.model.UserRepository
 import io.ktor.application.Application
 import io.ktor.application.call
+import io.ktor.application.install
+import io.ktor.features.CORS
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
 import io.ktor.request.receiveText
@@ -21,6 +21,10 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 @kotlin.jvm.JvmOverloads
 fun Application.module(testing: Boolean = false) {
     val userRepository = UserRepository()
+
+    install(CORS) {
+        anyHost()
+    }
 
     routing {
         get("/") {
